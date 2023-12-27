@@ -1,0 +1,29 @@
+{
+    "name": "nhattuanbl/larahelper",
+    "description": "Just some helper functions & commands for Laravel",
+    "version": "0.1",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Nhattuanbl\\LaraHelper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nhattuanbl",
+            "email": "nhattuanbl@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ext-mongodb": "*",
+        "deerdama/console-zoo-laravel": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nhattuanbl\\LaraHelper\\LaraHelperProvider"
+            ]
+        }
+    }
+}
