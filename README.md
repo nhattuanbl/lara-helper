@@ -12,5 +12,7 @@ composer require nhattuanbl/larahelper
 
 ## Usage
 ```php artisan elastic:ping```
+
 ```php artisan mongo:ping```
+
 ```SqlHelper::debug(QueryBuilder $builder)```
