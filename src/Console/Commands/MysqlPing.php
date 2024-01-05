@@ -21,15 +21,18 @@ class MysqlPing extends Command
         }
 
         $this->output->write("Checking connection to [".$connection['host'].":".$connection['port']."] on connection [$connectionName]... ");
-        if($fp = fsockopen($connection['host'], $connection['port'],$errCode,$errStr, $timeout)) {
-            $this->info('✅  Connection successful.');
+        if($fp = @fsockopen($connection['host'], $connection['port'],$errCode,$errStr, $timeout)) {
+            fclose($fp);
+            $this->info('✅  Connection established.');
+            $this->output->write("Checking authentication... ");
+            try {
+                \DB::connection($connectionName)->getPdo();
+                $this->info('✅  Authentication successful.');
+            } catch (\Exception $e) {
+                $this->error("❌  Authentication failed - " . $e->getMessage());
+            }
         } else {
-            $this->error("❌  Connection failed: $errCode - $errStr");
+            $this->error("❌  Connection failed - $errStr ($errCode)");
         }
-        fclose($fp);
-
-        $this->output->write("Checking authentication... ");
-        \DB::connection($connectionName)->getPdo();
-        $this->info('✅  Authentication successful.');
     }
 }
