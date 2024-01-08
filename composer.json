@@ -1,7 +1,7 @@
 {
     "name": "nhattuanbl/larahelper",
     "description": "Just some helper functions & commands for Laravel",
-    "version": "0.5",
+    "version": "0.6",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -25,5 +25,8 @@
                 "Nhattuanbl\\LaraHelper\\LaraHelperProvider"
             ]
         }
+    },
+    "require-dev": {
+        "stevebauman/autodoc-facades": "dev-master"
     }
 }
