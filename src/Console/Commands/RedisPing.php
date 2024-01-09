@@ -31,7 +31,7 @@ class RedisPing extends Command
 
             $redis = Redis::connection($connectionName);
             $pingResult = $redis->ping();
-            if ($pingResult === "+PONG") {
+            if ($pingResult) {
                 $this->info('✅  Authentication successful.');
             } else {
                 $this->error("❌  Authentication failed - " . $pingResult);
