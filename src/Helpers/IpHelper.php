@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class IpHelper
 {
-    public static function getUserIP(?Request $request = null) : ?string
+    public static function getUserIP(?Request $request = null): ?string
     {
         if ($request) {
             $server = $request->server->all();
