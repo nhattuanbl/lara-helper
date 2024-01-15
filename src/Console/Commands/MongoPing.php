@@ -15,6 +15,9 @@ class MongoPing extends Command
 
     public function handle()
     {
+        $timeout = $this->option('timeout');
+        $connectionName = $this->argument('connection');
+        $connection = config("database.connections.$connectionName");
         $this->output->write("Checking connection to [".$connection['host'].":".$connection['port']."] on connection [$connectionName]... ");
         if($fp = @fsockopen($connection['host'], $connection['port'],$errCode,$errStr, $timeout)) {
             fclose($fp);
