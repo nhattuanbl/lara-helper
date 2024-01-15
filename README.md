@@ -14,7 +14,7 @@ composer require nhattuanbl/larahelper
 #### Test connection
 ```php artisan elastic:ping```
 
-```php artisan mongo:ping```
+```php artisan mongo:ping {connection=mongodb} {--T|timeout=2}```
 
 ```php artisan mysql:ping {connection=mysql} {--T|timeout=2}```
 
