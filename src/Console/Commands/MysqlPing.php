@@ -6,14 +6,14 @@ use Illuminate\Console\Command;
 
 class MysqlPing extends Command
 {
-    protected $signature = 'mysql:ping {--C|connection=mysql} {--T|timeout=2}';
+    protected $signature = 'mysql:ping {connection=mysql} {--T|timeout=2}';
 
     protected $description = 'Test mysql connection and authentication';
 
     public function handle()
     {
         $timeout = $this->option('timeout');
-        $connectionName = $this->option('connection');
+        $connectionName = $this->argument('connection');
         $connection = config("database.connections.$connectionName");
         if (!$connection) {
             $this->error("Connection [$connectionName] not configured.");
