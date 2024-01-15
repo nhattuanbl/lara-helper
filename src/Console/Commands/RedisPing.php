@@ -7,14 +7,14 @@ use Illuminate\Support\Facades\Redis;
 
 class RedisPing extends Command
 {
-    protected $signature = 'redis:ping {--C|connection=default} {--T|timeout=2}';
+    protected $signature = 'redis:ping {connection=mysql} {--T|timeout=2}';
 
     protected $description = 'Test redis connection and authentication';
 
     public function handle()
     {
         $timeout = $this->option('timeout');
-        $connectionName = $this->option('connection');
+        $connectionName = $this->argument('connection');
 
         $config = config("database.redis.$connectionName");
         if (!$config) {
