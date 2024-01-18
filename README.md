@@ -26,6 +26,12 @@ composer require nhattuanbl/larahelper
 #### File helpers
 ```FileHelper::byte2Readable(int|float $size): string```
 
+```FileHelper::chmod_r(base_path('storage'), 0775)```
+
+```FileHelper::chown_r(base_path('storage'), 'www-data')```
+
+```FileHelper::chgrp_r(base_path('storage'), 'www-data')```
+
 #### IP helpers
 ```IpHelper::getUserIP(?Request $request = null): ?string```
 
