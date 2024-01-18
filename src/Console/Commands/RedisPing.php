@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Redis;
 
 class RedisPing extends Command
 {
-    protected $signature = 'redis:ping {connection=mysql} {--T|timeout=2}';
+    protected $signature = 'redis:ping {connection=default} {--T|timeout=2}';
 
     protected $description = 'Test redis connection and authentication';
 
