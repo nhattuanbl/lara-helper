@@ -18,7 +18,9 @@ composer require nhattuanbl/larahelper
 
 ```php artisan mysql:ping {connection=mysql} {--T|timeout=2}```
 
-```php artisan redis:ping {connection=mysql} {--T|timeout=2}```
+```php artisan redis:ping {connection=default} {--T|timeout=2}```
+
+```php artisan postgres:ping {connection=pgsql} {--T|timeout=2}```
 
 #### Sql helpers
 ```SqlHelper::debug(QueryBuilder $builder): string```

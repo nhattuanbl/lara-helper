@@ -25,15 +25,9 @@ class MongoPing extends Command
             $this->output->write("Checking authentication... ");
             try {
                 $version = (float) implode('.', explode('.', PHP_VERSION));
-                if ($version <= 7.3) {
-                    $clientMongo = new \MongoDB\Client("mongodb://".$connection['host'].":" . $connection['port']);
-                } else {
-                    $clientMongo = new \MongoDB\Client("mongodb://".$connection['host'].":" . $connection['port']);
-                }
+                $clientMongo = new \MongoDB\Client("mongodb://".$connection['host'].":" . $connection['port']);
 
-                if (!$clientMongo->selectDatabase('admin')->getDatabaseName()) {
-                    throw new \Exception();
-                }
+                $clientMongo->selectDatabase('admin')->listCollections();
                 $this->info('✅  Authentication successful.');
             } catch (\Exception $e) {
                 $this->error("❌  Authentication failed - " . $e->getMessage());
