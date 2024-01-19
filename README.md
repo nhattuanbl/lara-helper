@@ -22,6 +22,8 @@ composer require nhattuanbl/larahelper
 
 ```php artisan postgres:ping {connection=pgsql} {--T|timeout=2}```
 
+```php artisan db:create {name?} {connection=mysql}```
+
 #### Sql helpers
 ```SqlHelper::debug(QueryBuilder $builder): string```
 

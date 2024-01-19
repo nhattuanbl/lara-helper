@@ -4,6 +4,7 @@ namespace Nhattuanbl\LaraHelper;
 
 use Illuminate\Support\ServiceProvider;
 use Nhattuanbl\LaraHelper\Console\Commands\CheckExt;
+use Nhattuanbl\LaraHelper\Console\Commands\DBCreate;
 use Nhattuanbl\LaraHelper\Console\Commands\ElasticPing;
 use Nhattuanbl\LaraHelper\Console\Commands\MongoPing;
 use Nhattuanbl\LaraHelper\Console\Commands\MysqlPing;
@@ -25,7 +26,8 @@ class LaraHelperProvider extends ServiceProvider
             MysqlPing::class,
             RedisPing::class,
             CheckExt::class,
-            PostgresPing::class
+            PostgresPing::class,
+            DBCreate::class,
         ]);
     }
 }

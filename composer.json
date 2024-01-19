@@ -1,7 +1,7 @@
 {
     "name": "nhattuanbl/larahelper",
     "description": "Just some helper functions & commands for Laravel",
-    "version": "1.3",
+    "version": "1.4",
     "license": "MIT",
     "autoload": {
         "psr-4": {
