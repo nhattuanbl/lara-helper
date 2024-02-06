@@ -47,3 +47,5 @@ composer require nhattuanbl/larahelper
 ```StringHelper::isDate($date): bool```
 
 ```StringHelper::vi2Ascii(?string $str): string```
+
+```StringHelper::seconds2ReadableTime(int $seconds): string```

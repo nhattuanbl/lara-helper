@@ -82,4 +82,11 @@ class StringHelper
         foreach ($utf8 as $ascii => $uni) $str = preg_replace("/($uni)/i",$ascii,$str);
         return $str;
     }
+
+    public static function seconds2ReadableTime(int $seconds): string
+    {
+        $dtF = new \DateTime('@0');
+        $dtT = new \DateTime("@$seconds");
+        return $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+    }
 }
