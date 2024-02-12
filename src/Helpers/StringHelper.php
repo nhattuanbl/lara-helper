@@ -89,4 +89,24 @@ class StringHelper
         $dtT = new \DateTime("@$seconds");
         return $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
     }
+
+    public static function getDomain(string $url, bool $subdomain = true): ?string
+    {
+        if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
+            $url = "http://" . $url;
+        }
+
+        $parsedUrl = parse_url($url);
+        $host = $parsedUrl['host'] ?? null;
+        $host = str_replace('www.', '', $host);
+
+        if (!$subdomain) {
+            $parts = explode('.', $host);
+            if (count($parts) > 2) {
+                $host = implode('.', array_slice($parts, -2));
+            }
+        }
+
+        return $host;
+    }
 }

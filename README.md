@@ -49,3 +49,5 @@ composer require nhattuanbl/larahelper
 ```StringHelper::vi2Ascii(?string $str): string```
 
 ```StringHelper::seconds2ReadableTime(int $seconds): string```
+
+```StringHelper::getDomain(string $url, bool $subdomain = true): ?string```
