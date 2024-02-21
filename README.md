@@ -22,7 +22,10 @@ composer require nhattuanbl/larahelper
 
 ```php artisan postgres:ping {connection=pgsql} {--T|timeout=2}```
 
+#### Command helpers
 ```php artisan db:create {name?} {connection=mysql}```
+
+```php artisan db:copy {table_name} {--S|src_connection_name=babo_reader} {--D|dest_connection_name=mysql}```
 
 #### Sql helpers
 ```SqlHelper::debug(QueryBuilder $builder): string```

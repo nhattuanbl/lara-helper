@@ -99,6 +99,10 @@ class StringHelper
         $parsedUrl = parse_url($url);
         $host = $parsedUrl['host'] ?? null;
         $host = str_replace('www.', '', $host);
+//        $pos = strpos($host, 'www.');
+//        if ($pos !== false) {
+//            $host = substr_replace($host, '', $pos, strlen('www.'));
+//        }
 
         if (!$subdomain) {
             $parts = explode('.', $host);
