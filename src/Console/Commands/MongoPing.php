@@ -24,8 +24,11 @@ class MongoPing extends Command
             $this->info('✅  Connection established.');
             $this->output->write("Checking authentication... ");
             try {
-                $version = (float) implode('.', explode('.', PHP_VERSION));
-                $clientMongo = new \MongoDB\Client("mongodb://".$connection['host'].":" . $connection['port']);
+                $clientMongo = new \MongoDB\Client(
+                    "mongodb://{$connection['username']}:{$connection['password']}@{$connection['host']}:{$connection['port']}",
+                    [],
+                    ['typeMap' => ['root' => 'array', 'document' => 'array', 'array' => 'array']]
+                );
 
                 $clientMongo->selectDatabase('admin')->listCollections();
                 $this->info('✅  Authentication successful.');
